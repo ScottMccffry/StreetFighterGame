@@ -1,0 +1,229 @@
+import React, { useEffect, useRef } from 'react';
+import { gsap, TweenLite, Circ } from 'gsap';
+import styles from './HomepageCenter.module.css';
+
+function HomepageCenter() {
+  const canvasRef = useRef(null);
+  useEffect(() => {
+    (function() {
+
+      var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+  
+      // Main
+      initHeader();
+      initAnimation();
+      addListeners();
+  
+      function initHeader() {
+          width = window.innerWidth;
+          height = window.innerHeight;
+          target = {x: width/2, y: height/2};
+  
+          largeHeader = document.getElementById('large-header');
+          canvas = document.getElementById('demo-canvas');
+          largeHeader.style.height = height+'px';
+  
+          canvas.width = width;
+          canvas.height = height;
+          ctx = canvas.getContext('2d');
+  
+          // create points
+          points = [];
+          for(var x = 0; x < width; x = x + width/20) {
+              for(var y = 0; y < height; y = y + height/20) {
+                  var px = x + Math.random()*width/20;
+                  var py = y + Math.random()*height/20;
+                  var p = {x: px, originX: px, y: py, originY: py };
+                  points.push(p);
+              }
+          }
+  
+          // for each point find the 5 closest points
+          for(var i = 0; i < points.length; i++) {
+              var closest = [];
+              var p1 = points[i];
+              for(var j = 0; j < points.length; j++) {
+                  var p2 = points[j]
+                  if(!(p1 == p2)) {
+                      var placed = false;
+                      for(var k = 0; k < 5; k++) {
+                          if(!placed) {
+                              if(closest[k] == undefined) {
+                                  closest[k] = p2;
+                                  placed = true;
+                              }
+                          }
+                      }
+  
+                      for(var k = 0; k < 5; k++) {
+                          if(!placed) {
+                              if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
+                                  closest[k] = p2;
+                                  placed = true;
+                              }
+                          }
+                      }
+                  }
+              }
+              p1.closest = closest;
+          }
+  
+          // assign a circle to each point
+          for(var i in points) {
+              var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
+              points[i].circle = c;
+          }
+      }
+  
+      // Event handling
+      function addListeners() {
+          if(!('ontouchstart' in window)) {
+              window.addEventListener('mousemove', mouseMove);
+          }
+          window.addEventListener('scroll', scrollCheck);
+          window.addEventListener('resize', resize);
+      }
+      function mouseMove(e) {
+        let posx = 0;
+        let posy = 0;
+        if (e.pageX || e.pageY) {
+            posx = e.pageX;
+            posy = e.pageY;
+        }
+        else if (e.clientX || e.clientY) {
+            posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+            posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+        }
+        target.x = posx;
+        target.y = posy;
+    }
+  
+      function scrollCheck() {
+          if(document.body.scrollTop > height) animateHeader = false;
+          else animateHeader = true;
+      }
+  
+      function resize() {
+          width = window.innerWidth;
+          height = window.innerHeight;
+          largeHeader.style.height = height+'px';
+          canvas.width = width;
+          canvas.height = height;
+      }
+  
+      // animation
+      function initAnimation() {
+          animate();
+          for(var i in points) {
+              shiftPoint(points[i]);
+          }
+      }
+  
+      function animate() {
+          if(animateHeader) {
+              ctx.clearRect(0,0,width,height);
+              for(var i in points) {
+                  // detect points in range
+                  if(Math.abs(getDistance(target, points[i])) < 4000) {
+                      points[i].active = 0.3;
+                      points[i].circle.active = 0.6;
+                  } else if(Math.abs(getDistance(target, points[i])) < 20000) {
+                      points[i].active = 0.1;
+                      points[i].circle.active = 0.3;
+                  } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+                      points[i].active = 0.02;
+                      points[i].circle.active = 0.1;
+                  } else {
+                      points[i].active = 0;
+                      points[i].circle.active = 0;
+                  }
+  
+                  drawLines(points[i]);
+                  points[i].circle.draw();
+              }
+          }
+          requestAnimationFrame(animate);
+      }
+  
+      function shiftPoint(p) {
+        gsap.to(p, {
+            x: p.originX - 50 + Math.random() * 100,
+            y: p.originY - 50 + Math.random() * 100,
+            ease: Circ.easeInOut,
+            duration: 1 + 1 * Math.random(),
+            onComplete: function() {
+                shiftPoint(p);
+            }
+        });
+    }
+  
+      // Canvas manipulation
+      function drawLines(p) {
+          if(!p.active) return;
+          for(var i in p.closest) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p.closest[i].x, p.closest[i].y);
+              ctx.strokeStyle = 'rgba(156,217,249,'+ p.active+')';
+              ctx.stroke();
+          }
+      }
+  
+      function Circle(pos, rad, color) {
+        var _this = this;
+    
+        // constructor
+        (function() {
+            _this.pos = pos || null;
+            _this.radius = rad || null;
+            _this.color = color || null;
+        })();
+    
+        this.draw = function() {
+            if (!_this.active) return;
+            ctx.beginPath();
+            ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'rgba(156,217,249,' + _this.active + ')';
+            ctx.fill();
+        };
+    }
+  
+      // Util
+      function getDistance(p1, p2) {
+          return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+      }
+      
+  })();  }, []);
+  return (
+    
+      <div className="p-3" >
+       <div className={styles.largeHeader} id="large-header">
+       <canvas ref={canvasRef} id="demo-canvas"></canvas>
+            <section className="w-full h-screen flex flex-col p-40">
+            <div className={styles.big}>
+                <div className="title flex flex-col justify-end items-center h-2/5 font-permanent_marker">
+                    <h1 className="title-top bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent text-3xl "><span className="text-6xl">S</span>oftware</h1>
+                    <h1 className="title-bottom bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent text-3xl"><span className="text-6xl">E</span>nginee<span className="text-6xl">R</span></h1>
+                </div>
+              </div>
+                <div className={styles.menu}>
+                <div className="buttons flex flex-col items-center h-2/5 text-gray-300 text-2xl ">
+                    <a className="text-blue-400 mb-4 text-xl">Push start button</a>
+                    <a className="mb-4 text-xl">One Player</a>
+                    <a className="mb-4 text-xl">or</a>
+                    <a className="mb-4 text-xl">Player 1 vs Player 2</a>
+                </div>
+                </div>
+            </section>
+          <button className="py-2 bg-gradient-to-tr from-fuchsia-600 to-violet-600 rounded-md w-44 mt-3">
+            Profit from the promotion
+          </button>
+          
+        </div>
+        </div>
+    
+    
+
+  
+  );
+}
