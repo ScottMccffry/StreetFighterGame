@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import MFT from '../../artifacts/contracts/MetaFight.sol/MetaFight.json'
+/*import MFT from '../../artifacts/contracts/MetaFight.sol/MetaFight.json'*/
 import { create } from 'ipfs-http-client';
 import { ethers } from 'ethers';
-import "./CharacterGenerator.module.css"
+import styles from "./CharacterGenerator.module.css"
 
 
 const CharacterGenerator = () => {
-
+/*
   //type of characteristics
   const [error, setError] = useState(null);
   const [nftName, setNftName] = useState('');
@@ -251,23 +251,23 @@ const CharacterGenerator = () => {
 
 
   return (
-    <div className="main-container">
-  <h1 className="title-text">Character Generator</h1>
-  <div className="input-field-container">
-    <label htmlFor="nftName" className="input-field-label">NFT Name:</label>
+    <div className={styles.mainContainer}>
+  <h1 className={styles.titleText}>Character Generator</h1>
+  <div className={styles.inputFieldContainer}>
+    <label htmlFor="nftName" className={styles.inputFieldLabel}>NFT Name:</label>
     <input
       type="text"
       id="nftName"
       value={nftName}
       onChange={handleNftNameChange}
-      className="nft-name-input-field"
+      className={styles.nftNameInputField}
     />
   </div>
-  <div className="options-flex-container">
-    <div className="option-container">
-    <div className="radio-field">
-        <p className="bold-text">Fighters</p>
-        <label className="radio-label">
+  <div className={styles.optionsFlexContainer}>
+    <div className={styles.optionContainer}>
+    <div className={styles.radioField}>
+        <p className={styles.boldText}>Fighters</p>
+        <label className={styles.radioLabel}>
           <input
             type="radio"
             name="fighter"
@@ -275,9 +275,9 @@ const CharacterGenerator = () => {
             checked={fighter === 'warrior'}
             onChange={handleFighterChange}
           />
-          <span className="radio-span">Warrior</span>
+          <span className={styles.radioSpan}>Warrior</span>
         </label>
-        <label className="radio-label">
+        <label className={styles.radioLabel}>
           <input
             type="radio"
             name="fighter"
@@ -285,12 +285,12 @@ const CharacterGenerator = () => {
             checked={fighter === 'wizard'}
             onChange={handleFighterChange}
           />
-          <span className="radio-span">Wizard</span>
+          <span className={styles.radioSpan}>Wizard</span>
         </label>
       </div>
-      <div className="radio-field">
-        <p className="bold-text">weapons</p>
-        <label className="radio-label">
+      <div className={styles.radioField}>
+        <p className={styles.boldText}>weapons</p>
+        <label className={styles.radioLabel}>
           <input
             type="radio"
             name="weapon"
@@ -298,9 +298,9 @@ const CharacterGenerator = () => {
             checked={weapon === 'bow'}
             onChange={handleWeaponChange}
           />
-          <span className="radio-span">Bow</span>
+          <span className={styles.radioSpan}>Bow</span>
         </label>
-        <label className="radio-label">
+        <label className={styles.radioLabel}>
           <input
             type="radio"
             name="weapon"
@@ -308,12 +308,12 @@ const CharacterGenerator = () => {
             checked={weapon === 'sword'}
             onChange={handleWeaponChange}
           />
-          <span className="radio-span">Sword</span>
+          <span className={styles.radioSpan}>Sword</span>
         </label>
       </div>
-      <div className="radio-field">
-        <p className="bold-text">Colors</p>
-        <label className="radio-label">
+      <div className={styles.radioField}>
+        <p className={styles.boldText}>Colors</p>
+        <label className={styles.radioLabel}>
           <input
             type="radio"
             name="color"
@@ -321,9 +321,9 @@ const CharacterGenerator = () => {
             checked={color === 'red'}
             onChange={handleColorChange}
           />
-          <span className="radio-span">Red</span>
+          <span className={styles.radioSpan}>Red</span>
         </label>
-        <label className="radio-label">
+        <label className={styles.radioLabel}>
           <input
             type="radio"
             name="color"
@@ -331,23 +331,24 @@ const CharacterGenerator = () => {
             checked={color === 'blue'}
             onChange={handleColorChange}
           />
-          <span className="radio-span">Blue</span>
+          <span className={styles.radioSpan}>Blue</span>
         </label>
       </div>
     </div>
-    <div className="image-container">
-      {fighter && <img className="character-image" src={`/static/images/character/${fighter}.png`} alt={fighter} />}
-      {weapon && <img className="weapon-image" src={`/static/images/weapon/${weapon}.png`} alt={weapon} />}
+    <div className={styles.imageContainer}>
+      {fighter && <img className={styles.characterImage} src={`/static/images/character/${fighter}.png`} alt={fighter} />}
+      {weapon && <img className={styles.weaponImage} src={`/static/images/weapon/${weapon}.png`} alt={weapon} />}
     </div>
   </div>
-  <div className="pricing-container">
+  <div className={styles.pricingContainer}>
     <p>Total Price: {price} ETH</p>
-    <button className="mint-nft-button" onClick={mintNFT}>
+    <button className={styles.mintNftButton} onClick={mintNFT}>
       Mint NFT
     </button>
   </div>
 </div>
   );
+  */
 };
 
 export default CharacterGenerator;

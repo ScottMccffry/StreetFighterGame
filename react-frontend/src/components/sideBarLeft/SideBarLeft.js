@@ -1,7 +1,8 @@
 import React from 'react';
-import SidebarItem from '../sideBarItem/SideBarItem';
+import SideBarItem from '../sideBarItem/SideBarItem';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'
+import styles from './SideBarLeft.module.css'
 
 const Icons = {
   market: () => (
@@ -58,8 +59,9 @@ function SidebarLeft() {
   const isActive = (link) => location.pathname === link;
 
   return (
-    <div className="hidden lg:flex h-screen flex-col justify-between w-48 fixed left-0 top-0 bottom-0 pt-24">
-      <ul className="space-y-8">
+    <div className={styles.sidebarLeft}>
+      <ul className={styles.sidebarMenu}>
+    
         {[
           { key: 'dashboard', link: '/' },
           { key: 'market', link: '/marketplace' },
@@ -69,34 +71,34 @@ function SidebarLeft() {
           { key: 'wallet', link: '/wallet' },
           { key: 'settings', link: '/settings' },
         ].map(({ key, link }, index) => (
-          <li key={key}>
-            <Link to={link}>
-              <SidebarItem
-                text={key}
-                index={index}
-                active={isActive(link)}
-              />
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div className="pb-5  px-4">
-        <hr className="mb-5 text-zinc-700" />
-        <a href="#" className="py-2 flex items-center  text-zinc-500">
-          <span className="bg-zinc-800 w-8 h-8 grid place-items-center mr-2 rounded-md">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              {Icons.logout()}
-            </svg>
-          </span>
-          Logout
-        </a>
-      </div>
+          <li key={key} className={styles.sidebarItem}>
+          <Link to={link} className={styles.sidebarLink}>
+            <SideBarItem
+              text={key}
+              index={index}
+              active={isActive(link)}
+            />
+          </Link>
+        </li>
+      ))}
+    </ul>
+    <div className={styles.sidebarLogout}>
+      <hr className={styles.separator} />
+      <a href="#" className={styles.logoutButton}>
+        <span className={styles.logoutIcon}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={styles.icon}
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            {Icons.logout()}
+          </svg>
+        </span>
+        Logout
+      </a>
     </div>
-  );
+  </div>
+);
 }
   export default SidebarLeft;

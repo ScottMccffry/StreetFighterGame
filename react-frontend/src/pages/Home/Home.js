@@ -1,14 +1,14 @@
 import React from 'react';
 import HomepageCenter from '../../components/homepageCenter/HomepageCenter';
+import styles from "./Home.module.css"
 
 const Home = () => {
-  return <div className="flex flex-col md:flex-row h-full">
-  <div className="w-48 hidden lg:block shrink-0" />
-  <div className=" grow ">
+  return  (<div className={styles.mainLayout}>
+  <div className={styles.sidePadding} />
+  <div className={styles.mainContent}>
     <HomepageCenter />
-    </div>
-
-</div>
+  </div>
+</div>);
 };
 
 export default Home;

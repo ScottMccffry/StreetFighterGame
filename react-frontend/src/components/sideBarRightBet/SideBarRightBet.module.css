@@ -26,40 +26,40 @@ body {
     cursor: pointer;
     transition: 0.3s;
   }
-  .btn:hover:not(.btn--primary):not(.btn--secondary) {
+  .btn:hover:not(.btn-Primary):not(.btn-Secondary) {
     background-color: #d6d6d6;
     color: #888f98;
   }
-  .btn--primary {
+  .btn-Primary {
     background-color: #613cea;
     color: white;
   }
-  .btn--secondary {
+  .btn-Secondary {
     background-color: white;
     color: #613cea;
   }
-  .btn--primary, .btn--secondary {
+  .btn-Primary, .btn-Secondary {
     transition: transform 0.3s, box-shadow 0.3s;
   }
-  .btn--primary:hover, .btn--secondary:hover {
+  .btn-Primary:hover, .btn-Secondary:hover {
     transform: translateY(-3px);
     box-shadow: 0 3px 6px rgba(65, 24, 219, 0.16);
   }
-  .btn--icon {
+  .btn-Icon {
     padding: 0.6rem 0.8rem;
   }
-  .btn--icon svg {
+  .btn-Icon svg {
     width: 20px;
     height: 25px;
     stroke: currentColor;
     fill: currentColor;
     vertical-align: middle;
   }
-  .btn--toggle {
+  .btn-Toggle {
     border: 1px solid #e2e2e2;
     padding: 0.5rem 0.65rem;
   }
-  .btn--round, .btn--round-lg {
+  .btn-Round, .btn-RoundLg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,19 +69,19 @@ body {
     background-color: #a3a9b0;
     color: white;
   }
-  .btn--round svg, .btn--round-lg svg {
+  .btn-Round svg, .btn-RoundLg svg {
     width: 50%;
     height: 90%;
   }
-  .btn--round-lg {
+  .btn-RoundLg {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
   }
-  .btn--add {
+  .btn-Add {
     background-color: #613cea;
   }
-  .btn--no-bg {
+  .btn-NoBg {
     background-color: rgba(0, 0, 0, 0);
   }
   
@@ -94,15 +94,15 @@ body {
     padding: 0.5rem 0.75rem;
     color: #a3a9b0;
   }
-  .tag--red {
+  .tag-Red {
     color: #e1223c;
     background-color: rgba(225, 34, 60, 0.2);
   }
-  .tag--green {
+  .tag-Green {
     color: #52b49c;
     background-color: rgba(82, 180, 156, 0.2);
   }
-  .tag--icon svg {
+  .tag-Icon svg {
     fill: currentColor;
     margin-right: 0.3rem;
   }
@@ -113,27 +113,27 @@ body {
     vertical-align: middle;
     position: relative;
   }
-  .rating--primary {
+  .rating-Primary {
     color: white;
     background-color: #613cea;
   }
-  .rating--up {
+  .rating-Up {
     border-color: rgba(82, 180, 156, 0.1);
   }
-  .rating--up:before {
+  .rating-Up:before {
     border-bottom: 6px solid;
     top: -0.375rem;
     transform: translate(-50%, -100%);
   }
-  .rating--down {
+  .rating-Down {
     border-color: rgba(225, 34, 60, 0.1);
   }
-  .rating--down:before {
+  .rating-Down:before {
     border-top: 6px solid;
     bottom: -0.375rem;
     transform: translate(-50%, 100%);
   }
-  .rating--up:before, .rating--down:before {
+  .rating-Up:before, .rating-Down:before {
     content: "";
     width: 0;
     height: 0;
@@ -198,12 +198,12 @@ body {
     transform: translateX(1.5rem);
   }
   
-  .toggle-buttons label.btn.btn--toggle:hover {
+  .toggleButtons label.btn.btn-Toggle:hover {
     color: #613cea;
     background-color: rgba(97, 60, 234, 0.2);
     border-color: rgba(97, 60, 234, 0.3);
   }
-  .toggle--button:checked + label {
+  .toggle-Button:checked + label {
     color: #613cea;
     background-color: rgba(97, 60, 234, 0.1);
     border-color: rgba(97, 60, 234, 0.5);

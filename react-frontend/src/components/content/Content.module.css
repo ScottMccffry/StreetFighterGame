@@ -1,22 +1,22 @@
 
 
-.marketplace-title {
+.marketplaceTitle {
   font-size: 2em;
   font-weight: bold;
   padding-left: 0.75rem;
   margin-top: 0.75rem;
 }
 
-.marketplace-description {
+.marketplaceDescription {
   color: #71717A;
   padding-left: 0.75rem;
 }
 
-.promotional-container {
+.promotionalContainer {
   padding: 0.75rem;
 }
 
-.promotional-banner {
+.promotionalBanner {
   width: 100%;
   height: 11rem;
   border-radius: 0.375rem;
@@ -28,13 +28,13 @@
   padding-left: 1rem;
 }
 
-.promotional-banner-title {
+.promotionalBannerTitle {
   font-weight: bold;
   font-size: 3em;
   max-width: 12.5rem;
 }
 
-.promotional-banner-button {
+.promotionalBannerButton {
   padding: 0.5rem;
   background-image: linear-gradient(to top right, #C38D9E, #E95258);
   border-radius: 0.375rem;
@@ -42,7 +42,7 @@
   margin-top: 0.75rem;
 }
 
-.trending-container {
+.trendingContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,12 +50,12 @@
   margin-top: 0.75rem;
 }
 
-.trending-title {
+.trendingTitle {
   font-size: 1.25em;
   font-weight: 600;
 }
 
-.trending-artwork-selector {
+.trendingArtworkSelector {
   display: inline-flex;
   gap: 0.75rem;
 }

@@ -1,0 +1,23 @@
+.customFlex {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebarSpace {
+    width: 3rem;
+    display: none;
+  }
+  
+  .contentGrow {
+    flex-grow: 1;
+  }
+  
+  @media (min-width: 1024px) {
+    .customFlex {
+      flex-direction: row;
+    }
+    .sidebarSpace {
+      display: block;
+    }
+  }
+  

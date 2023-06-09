@@ -1,15 +1,15 @@
 import React from 'react';
+import styles from './LiveStream.module.css';
 
 const LiveStream = () => {
   return (
-    <div className="w-full h-full border border-gray-300 rounded-xl overflow-hidden">
+    <div className={styles.streamContainer}>
       <iframe
         title="Twitch Stream"
         src="https://player.twitch.tv/?channel=your_channel_name&parent=your_website_domain"
-        frameborder="0"
-        allowfullscreen="true"
+        allowFullScreen="true"
         scrolling="no"
-        className="w-full h-full"
+        className={styles.streamFrame}
       ></iframe>
     </div>
   );

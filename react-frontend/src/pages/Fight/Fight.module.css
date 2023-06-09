@@ -1,0 +1,57 @@
+.fightLayout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 1rem;
+  }
+  
+  .sideSpace {
+    width: 3rem;
+    display: none;
+  }
+  
+  .contentArea {
+    flex-grow: 1;
+    position: relative;
+  }
+  
+  .contentRow {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    margin-top: 0.5rem;
+  }
+  
+  .contentCell {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .livestreamCell {
+    flex-basis: 100%;
+    padding-right: 0.5rem;
+  }
+  
+  .livedataCell {
+    flex-basis: 50%;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+  }
+  
+  .betsHistoryContainer {
+    width: 100%;
+    margin-top: 0.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .sideSpace {
+      display: block;
+    }
+  }
+  

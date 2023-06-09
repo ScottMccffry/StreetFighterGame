@@ -1,0 +1,113 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  background-color: #2b2b2b; /* Darker color */
+  height: 5vh;
+  z-index: 30;
+}
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 5vw; /* add margin-left to place the logo next to the menuButton */
+  }
+  
+  
+  .logoTitle {
+    margin-left: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 2rem; /* Bigger font-size */
+  }
+  
+  .connectedUser {
+    display: flex;
+    align-items: center;
+  }
+  
+  .notificationIcon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+  }
+  
+  .avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+  }
+  
+  .button {
+    display: flex;
+    align-items: center;
+  }
+  
+  .connectButton {
+    background: linear-gradient(90deg, #D946EF 0%, #7C3AED 100%);
+    border-radius: 1rem;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+  }
+  
+  .searchForm {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem; /* Add a left margin to place the search bar next to the logo */
+  }
+  .searchInput {
+    background-color: #2b2b2b;
+    padding-left: 1rem; /* Room for search icon */
+    padding-right: 2rem;
+    width: 10rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
+    color: #475569;
+  }
+  
+  .searchIcon {
+    position: absolute; /* Positions the search icon in the input field */
+    height: 1.5rem;
+    width: 1.5rem;
+    left: 80%;
+    top: calc(50% - 0.75rem);
+  }
+  
+  .dropdownIcon {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+  
+  .dropdownIcon .h-7 {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  /* Vertical line */
+  .connectedUser::before {
+    content: "";
+    display: block;
+    height: 70%;
+    width: 1px;
+    background-color: #3b3b3b; /* Slightly lighter than the new darker color */
+    margin-right: 1rem;
+  }
+
+  .menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vw;  /* Set the width as per your requirement*/
+    height: 100%;
+  }
+  
+  .menuIcon {
+    fill: white; /* This will make the icon white*/
+    width: 24px;  /* Adjust the size as needed*/
+    height: 24px; /* Adjust the size as needed*/
+  }

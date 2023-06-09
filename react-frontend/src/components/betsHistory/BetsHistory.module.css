@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
 
-.sr-only {
+.srOnly {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -13,73 +13,73 @@
   border: 0;
 }
 
-.matches-container {
+.matchesContainer {
   background-color: #160016;
   border: 1px solid #D1D5DB;
   border-radius: 15px;
 }
 
-.matches-header {
+.matchesHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
 }
 
-.matches-nav-list {
+.matchesNavList {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.nav-link {
+.navLink {
   color: #6366F1;
   font-weight: 600;
 }
 
-.nav-link-default {
+.navLinkDefault {
   color: #9CA3AF;
 }
 
-.nav-link-default:hover {
+.navLinkDefault:hover {
   color: #6366F1;
 }
 
-.agenda-link {
+.agendaLink {
   color: #9CA3AF;
   padding: 0.25rem;
 }
 
-.matches-table {
+.matchesTable {
   width: 100%;
   text-align: center;
 }
 
-.table-header {
+.tableHeader {
   background-color: #160016;
   border: 1px solid #D1D5DB;
   border-radius: 15px;
   color: #D1D5DB;
 }
 
-.table-cell-default {
+.tableCellDefault {
   padding: 0.5rem 2rem;
   text-align: left;
   white-space: nowrap;
 }
 
-.table-row {
+.tableRow {
   border-bottom: 1px solid #D1D5DB;
   color: white;
 }
 
-.time-container {
+.timeContainer {
   padding: 1rem 2rem;
   text-align: left;
   white-space: nowrap;
 }
 
-.live-indicator {
+.liveIndicator {
   background-color: #FECACA;
   color: #DC2626;
   display: inline-flex;
@@ -90,12 +90,12 @@
   margin-right: 0.5rem;
 }
 
-.score-display {
+.scoreDisplay {
   font-weight: 800;
 }
 
-.odds-indicator,
-.possible-winnings-indicator {
+.oddsIndicator,
+.possibleWinningsIndicator {
   padding: 1rem;
   background-color: #6B7280;
   border: 1px solid #D1D5DB;
@@ -108,7 +108,7 @@
   margin-right: 0.5rem;
 }
 
-.stats-link {
+.statsLink {
   color: #6366F1;
   padding-right: 2rem;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from './SideBarItem.module.css'
 
 const Icons = {
   market: () => (
@@ -49,35 +50,22 @@ const Icons = {
     />
   ),
 };
-function SidebarItem({ text, index, active }) {
+function SideBarItem({ text, index, active }) {
   return (
-    <li className="relative">
-      {active ? (
-        <div className="absolute -left-1 top-0 bg-fuchsia-600 w-2 h-8 rounded-full" />
-      ) : null}
-      <a
-        href="#"
-        className={`pl-4 flex items-center capitalize ${
-          active ? 'text-white' : 'text-zinc-500'
-        }`}
-      >
-        <span
-          className={`bg-zinc-800 w-8 h-8 grid place-items-center mr-2 rounded-md ${
-            active ? 'bg-fuchsia-600' : 'bg-zinc-800'
-          }`}
+    <div className={`${styles['sidebarItem']} ${active ? styles['sidebarItemActive'] : ''}`}>
+      <span className={styles['sidebarItemIcon']}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={styles.icon}
+          viewBox="0 0 20 20"
+          fill="currentColor"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className={`h-5 w-5 ${active ? 'text-white' : 'text-zinc-500'}`}
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            {Icons[text]()}
-          </svg>
-        </span>
-        {text}
-      </a>
-    </li>
+          {Icons[text]()}
+        </svg>
+      </span>
+      <span className={styles['sidebarItemText']}>{text}</span>
+    </div>
   );
 }
-export default SidebarItem;
+
+export default SideBarItem;

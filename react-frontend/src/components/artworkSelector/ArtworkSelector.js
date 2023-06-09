@@ -1,9 +1,9 @@
 import React from 'react';
-import './ArtworkSelector.module.css';
+import styles from './ArtworkSelector.module.css';
 
 function ArtworkSelector({ text, index }) {
   return (
-    <li className="artwork-list-item">
+    <li className={styles.artworkListItem}>
       <button
         className={index ? 'artwork-button-default' : 'artwork-button-highlight'}
       >

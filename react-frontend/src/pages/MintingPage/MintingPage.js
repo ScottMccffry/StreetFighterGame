@@ -1,14 +1,17 @@
 import React from 'react';
-import CharacterGenerator from '../../components/characterGenerator/CharacterGenerator';
+import CharacterGenerator from '../../components/characterGenerator/CharacterGenerator.js';
+import styles from './MintingPage.module.css'
 
 const MintingPage = () => {
-  return (<div className="flex flex-col md:flex-row">
-  <div className="w-48 hidden lg:block shrink-0" />
-  <div className=" grow ">
-          <CharacterGenerator />
-        </div>
+  return (
+    <div className={styles.customFlex}>
+      <div className={styles.sidebarSpace} />
+      <div className={styles.contentGrow}>
+        <CharacterGenerator />
+      </div>
     </div>
   );
+  
 };
 
 export default MintingPage;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from './BetsHistory.module.css'
 
 
 const BetsHistory = () => {
@@ -19,72 +20,72 @@ const BetsHistory = () => {
   }, []);
 
   return (
-    <div className="matches-container">
-    <div className="matches-header">
-      <ul className="matches-nav-list">
+    <div className={styles.matchesContainer}>
+    <div className={styles.matchesHeader}>
+      <ul className={styles.matchesNavList}>
         <li>
-          <a className="nav-link">All matches</a>
+          <a className={styles.navLink}>All matches</a>
         </li>
         <li>
-          <a className="nav-link-default">Live Play</a>
+          <a className={styles.navLinkDefault}>Live Play</a>
         </li>
         <li>
-          <a className="nav-link-default">Completed</a>
+          <a className={styles.navLinkDefault}>Completed</a>
         </li>
         <li>
-          <a className="nav-link-default">Scheduled</a>
+          <a className={styles.navLinkDefault}>Scheduled</a>
         </li>
       </ul>
-      <a className="agenda-link">
-        <span className="sr-only">Agenda</span>
+      <a className={styles.agendaLink}>
+        <span className={styles.srOnly}>Agenda</span>
         <svg style={{ width: '24px', height: '24px' }} viewBox="0 0 24 24">
           <path fill="currentColor" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1" />
         </svg>
       </a>
     </div>
-    <div className="matches-table-container">
-      <table className="matches-table">
-        <thead className="table-header">
+    <div className={styles.matchesTableContainer}>
+      <table className={styles.matchesTable}>
+        <thead className={styles.tableHeader}>
           <tr>
-            <th className="table-cell-default">Date</th>
-            <th className="table-cell-default">Match</th>
-            <th className="table-cell-default">Odds</th>
-            <th className="table-cell-default">Bet</th>
-            <th className="table-cell-default">Stats</th>
-            <th className="table-cell-default">
-              <span className="sr-only">Stats</span>
+            <th className={styles.tableCellDefault}>Date</th>
+            <th className={styles.tableCellDefault}>Match</th>
+            <th className={styles.tableCellDefault}>Odds</th>
+            <th className={styles.tableCellDefault}>Bet</th>
+            <th className={styles.tableCellDefault}>Stats</th>
+            <th className={styles.tableCellDefault}>
+              <span className={styles.srOnly}>Stats</span>
             </th>
           </tr>
         </thead>
 
         <tbody>
         {betsHistory.map((bet, index) => (
-          <tr key={index} className="table-row">
-            <td className="time-container">
-              <span className="text-gray-600 mr-2">8:00</span><span className="live-indicator"><svg width="6" height="6" viewBox="0 0 8 8"><circle fill="currentColor" cx="4" cy="4" r="4"/></svg>Live</span>
+          <tr key={index} className={styles.tableRow}>
+            <td className={styles.timeContainer}>
+              <span className="text-gray-600 mr-2">8:00</span><span className={styles.liveIndicator}><svg width="6" height="6" viewBox="0 0 8 8"><circle fill="currentColor" cx="4" cy="4" r="4"/></svg>Live</span>
             </td>
             <td>
-              <div className="team-display">
-                <div className="team-name">
-                  <span>Real Valladolid</span><img alt="" src="https://ssl.gstatic.com/onebox/media/sports/logos/HlIrXZRP96tv0H1uiiN0Jg_48x48.png" className="team-logo" />
+              <div className={styles.teamDisplay}>
+                <div className={styles.teamName}>
+                  <span>Real Valladolid</span><img alt="" src="https://ssl.gstatic.com/onebox/media/sports/logos/HlIrXZRP96tv0H1uiiN0Jg_48x48.png" className={styles.teamLogo} />
                 </div>
-                <p className="score-display">
+                <p className={styles.scoreDisplay}>
                   <span className="mr-1">3</span><span className="text-gray-500">:</span>
                   <span className="ml-1">1</span>
                 </p>
-                <div className="team-name">
-                  <img alt="" src="https://ssl.gstatic.com/onebox/media/sports/logos/uoxp9_c1LHfPFpOW_CKdJw_48x48.png" className="team-logo" /><span>Atlético Madrid</span>
+                <div className={styles.teamName}>
+                  <img alt="" src="https://ssl.gstatic.com/onebox/media/sports/logos/uoxp9_c1LHfPFpOW_CKdJw_48x48.png" className={styles.teamLogo} /><span>Atlético Madrid</span>
                 </div>
               </div>
             </td>
             <td>
-              <div className="odds-indicator">1.50</div>
-              <div className="odds-indicator">3.60</div>
-              <div className="odds-indicator">6.00</div>
+              <div className={styles.oddsIndicator}>1.50</div>
+              <div className={styles.oddsIndicator}>3.60</div>
+              <div className={styles.oddsIndicator}>6.00</div>
             </td>
-            <td className="possible-winnings-indicator">possible winnings </td>
-            <td className="stats-link-container">
-              <a href="#" className="stats-link">More stats</a>
+            <td className={styles.possibleWinningsIndicator}>possible winnings </td>
+            <td className={styles.statsLinkContainer}>
+              <a href="#" className={styles.statsLink}>More stats</a>
             </td>
           </tr>
          ))}

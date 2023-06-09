@@ -1,25 +1,25 @@
-.main-container {
+.mainContainer {
     color: white;
     background-color: transparent;
     padding: 1rem;
   }
   
-  .title-text {
+  .titleText {
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
   
-  .input-field-container,
-  .radio-option-container {
+  .inputFieldContainer,
+  .radioOptionContainer {
     margin-bottom: 1rem;
   }
   
-  .input-field-label {
+  .inputFieldLabel {
     display: block;
     margin-bottom: 0.5rem;
   }
   
-  .nft-name-input-field {
+  .nftNameInputField {
     width: 50%;
     padding: 0.75rem 0.875rem;
     background-color: #2d3748;
@@ -28,44 +28,44 @@
     border-radius: 0.25rem;
   }
   
-  .options-flex-container {
+  .optionsFlexContainer {
     display: flex;
   }
   
-  .option-container,
-  .image-container {
+  .optionContainer,
+  .imageContainer {
     width: 50%;
   }
   
-  .bold-text {
+  .boldText {
     font-weight: bold;
     margin-bottom: 0.5rem;
   }
   
-  .radio-option-label {
+  .radioOptionLabel {
     display: block;
     margin-bottom: 0.5rem;
   }
   
-  .radio-option-span {
+  .radioOptionSpan {
     margin-left: 0.5rem;
   }
   
-  .image-container {
+  .imageContainer {
     position: relative;
   }
   
-  .character-image,
-  .weapon-image {
+  .characterImage,
+  .weaponImage {
     position: absolute;
   }
   
-  .pricing-container {
+  .pricingContainer {
     text-align: center;
     margin-top: 1rem;
   }
   
-  .mint-nft-button {
+  .mintNftButton {
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
     background-color: #3182ce;

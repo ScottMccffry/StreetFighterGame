@@ -2,19 +2,20 @@ import React from 'react';
 import SideBarRight from '../../components/sideBarRight/SideBarRight';
 import Content from '../../components/content/Content';
 import MarketItems from '../../components/marketItems/MarketItems';
+import styles from './Marketplace.module.css'
 
 
 const Marketplace = () => {
   return (
-    <div className="flex flex-col md:flex-row">
-      <div className="w-48 hidden lg:block shrink-0" />
-      <div className="grow">
+    <div className={styles.customFlex}>
+      <div className={styles.sidebarSpace} />
+      <div className={styles.contentGrow}>
         <Content />
         <MarketItems />
       </div>
       <SideBarRight />
     </div>
-  );
+  );  
 };
 
 export default Marketplace;

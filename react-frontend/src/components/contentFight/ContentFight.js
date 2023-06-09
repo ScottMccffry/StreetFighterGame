@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import WalletContext from '../../context/WalletContext';
 import FightModal from '../fightModal/FightModal';
-
+import styles from './ContentFight.module.css';
 
 function ContentFight() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -17,43 +17,36 @@ function ContentFight() {
   };
 
   return (
-    <div className="">
-      <h1 className="text-2xl font-bold px-3 mt-3">Live Matches</h1>
-      <h2 className="text-zinc-500 px-3">
-       See all the live and programmed fights
-      </h2>
-      <div className="p-3">
+    <div className={styles.contentFight}>
+      <h1 className={styles.contentTitle}>Live Matches</h1>
+      <h2 className={styles.contentSubtitle}>See all the live and programmed fights</h2>
+      <div className={styles.contentPromo}>
         <div
-          className="w-full h-44  rounded-md bg-center bg-cover flex flex-col justify-center px-4"
+          className={styles.promoBanner}
           style={{
             backgroundImage:
               'url(https://assets.codepen.io/3685267/nft-dashboard-art-6.jpg)',
           }}
         >
-          <h2 className="font-bold text-3xl max-w-sm">
-            Promotion
-          </h2>
-          <button className="py-2 bg-gradient-to-tr from-fuchsia-600 to-violet-600 rounded-md w-44 mt-3">
-            Profit from the discount
-          </button>
+          <h2 className={styles.promoTitle}>Promotion</h2>
+          <button className={styles.promoButton}>Profit from the discount</button>
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between px-3 mt-3">
-        <h2 className="text-xl font-semibold">Trending upcoming fights</h2>
+      <div className={styles.contentTrending}>
+        <h2 className={styles.trendingTitle}>Trending upcoming fights</h2>
         <button
-          className="text-fuchsia-600 underline font-bold"
+          className={styles.trendingButton}
           onClick={handleButtonClick}
         >
           Start a fight
         </button>
-        </div>
+      </div>
 
-{isModalVisible && (
-  <FightModal isConnected={isConnected} closeModal={closeModal} />
-)}
-</div>
-
+      {isModalVisible && (
+        <FightModal isConnected={isConnected} closeModal={closeModal} />
+      )}
+    </div>
   );
 }
 

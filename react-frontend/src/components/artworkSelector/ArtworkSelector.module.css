@@ -1,10 +1,10 @@
 
 
-.artwork-button-default {
+.artworkButtonDefault {
   color: #747C92; /* Approximate for zinc-500 in Tailwind CSS */
 }
 
-.artwork-button-highlight {
+.artworkButtonHighlight {
   color: #D946D6; /* Approximate for fuchsia-600 in Tailwind CSS */
   text-decoration: underline;
   font-weight: bold;

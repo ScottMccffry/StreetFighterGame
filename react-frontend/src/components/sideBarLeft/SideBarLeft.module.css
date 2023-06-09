@@ -1,0 +1,59 @@
+
+  .sidebarLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 10vw;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding-top: 9vh;
+    background-color: #2b2b2b; /* change to the color you used for your header */
+    height: 100vh; /* set height to fill viewport height */
+    z-index:29;
+    }
+  
+  
+  .sidebarMenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 2rem;
+  }
+  
+  .sidebarItem {
+    width: auto;
+    height: auto;
+  }
+  
+  .sidebarLink {
+    text-decoration: none;
+  }
+  
+  .sidebarLogout {
+    padding: 0 4rem 5rem;
+  }
+  
+  .separator {
+    margin-bottom: 5rem;
+    color: #7c8fa5;
+  }
+  
+  .logoutButton {
+    display: flex;
+    color: #7c8fa5;
+  }
+  
+  .logoutIcon {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 4rem;
+    margin-right: 2rem;
+  }
+  
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  
