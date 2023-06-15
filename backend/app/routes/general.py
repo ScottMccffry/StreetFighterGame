@@ -5,15 +5,14 @@ from app.database import db
 import os
 import base64
 import threading
-import main  # This assumes that there's a main.py file in the same directory
-
+#import main  # This assumes that there's a main.py file in the same directory
 
 
 
 general_routes = Blueprint('general_routes', __name__)
 
-def run_game():
-    main.main()  # Call the main function of your game
+#def run_game():
+#   main.main()  # Call the main function of your game
     
 @general_routes.route('/api/marketItems', methods=['GET'])
 def get_items():
@@ -201,9 +200,9 @@ def del_fighter_image(dna):
         # If no fighter is found, return a 404 not found status
         return jsonify({"message": "No fighter found with this NFT address"}), 404
 
-@general_routes.route('/api/start-game', methods=['POST'])
-def start_game():
-    game_thread = threading.Thread(target=run_game)
-    game_thread.start()
-    return jsonify({'status': 'Game started'})
+#@general_routes.route('/api/start-game', methods=['POST'])
+#def start_game():
+#    game_thread = threading.Thread(target=run_game)
+#    game_thread.start()
+#    return jsonify({'status': 'Game started'})
 
