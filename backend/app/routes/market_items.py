@@ -89,10 +89,4 @@ items = [
     ];
 
 
-@marketItems_routes.route('/api/marketItems', methods=['GET'])
-def get_items():
-    return jsonify(items);
 
-@marketItems_routes.route('/api/fighters', methods=['GET'])
-def get_fighters():
-   return jsonify(fighters)

@@ -22,7 +22,7 @@ def get_items():
 
 @general_routes.route('/api/fighters', methods=['GET'])
 def get_fighters():
-    fighters = Users.query.all()
+    fighters = Fighter.query.all()
     fighters_list = [fighter.to_dict() for fighter in fighters]
     return jsonify(fighters_list)
 
@@ -200,6 +200,24 @@ def del_fighter_image(dna):
         # If no fighter is found, return a 404 not found status
         return jsonify({"message": "No fighter found with this NFT address"}), 404
 
+
+@general_routes.route('/api/add_fighters', methods=['POST'])
+def add_fighter():
+    data = request.get_json()
+    new_fighter = Fighter(
+        name=data.get('name'),
+        collection=data.get('collection'),
+        image=data.get('image'),
+        rank=data.get('rank'),
+        nft_address=data.get('nft_address'),
+        game_characteristics_json=data.get('game_characteristics_json'),
+        handler=data.get('handler')
+    )
+
+    db.session.add(new_fighter)
+    db.session.commit()
+
+    return jsonify(new_fighter.to_dict()), 201
 #@general_routes.route('/api/start-game', methods=['POST'])
 #def start_game():
 #    game_thread = threading.Thread(target=run_game)

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import WalletContext from '../../../../frontend/src/context/WalletContext';
+import WalletContext from '../../context/WalletContext';
 import styles from './Header.css';
 
 function Header() {

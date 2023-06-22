@@ -4,10 +4,12 @@ import json
 class Fighter(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
-    group = db.Column(db.String(255), nullable=False)
+    collection = db.Column(db.String(255), nullable=False)
     image = db.Column(db.String(255), nullable=False)
+    rank = db.Column(db.Integer, primary_key=False)
     nft_address = db.Column(db.String(255), unique=True, nullable=False)
     game_characteristics_json = db.Column(db.String, nullable=False)
+    handler = db.Column(db.String(255), nullable=False)
 
     @property
     def game_characteristics(self):
@@ -21,8 +23,10 @@ class Fighter(db.Model):
         return {
             'id': self.id,
             'name': self.name,
-            'group': self.group,
+            'collection': self.collection,
             'image': self.image,
+            'rank': self.rank,
             'nft_address': self.nft_address,
-            'game_characteristics': self.game_characteristics
+            'game_characteristics': self.game_characteristics,
+            'handler': self.handler
         }
