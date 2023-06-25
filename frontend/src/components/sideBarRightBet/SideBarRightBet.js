@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SideBarRightBet.module.css';
 
-function SideBarRightBet({ showBetSidebar, selectedBet }) {
+function SideBarRightBet({ showBetSidebar, selectedBet, closeBetSidebar }) {
     return (
       <div className={styles.layout} id="app">
  
@@ -10,19 +10,19 @@ function SideBarRightBet({ showBetSidebar, selectedBet }) {
   <div className={styles.invoice__wrapper}>
     <h2 className={styles.invoice__title}>
       Invoice for payment
-      <a className={styles.close} href="#">
-        <span className={styles['sr-only']}>Close</span>
-        <svg
-          id={styles.Closebtn}
-          style={{ width: '24px', height: '24px' }}
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="currentColor"
-            d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
-          />
-        </svg>
-      </a>
+      <button className={styles.close} onClick={closeBetSidebar}>
+  <span className={styles['sr-only']}>Close</span>
+  <svg
+    id={styles.Closebtn}
+    style={{ width: '24px', height: '24px' }}
+    viewBox="0 0 24 24"
+  >
+    <path
+      fill="currentColor"
+      d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+    />
+  </svg>
+</button>
     </h2>
     <article>
       <section className={styles.invoice__section + ' ' + styles.invoice__type}>

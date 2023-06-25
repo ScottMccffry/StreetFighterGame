@@ -16,7 +16,7 @@ with app.app_context():
 
 # Loop through each record and print it out
 for fight in fights:
-    print(f"ID: {fight.fighter1_id}, Name: {fight.fighter2_id}, Collection: {fight.odd1}, Image: {fight.image}, Rank: {fight.odd2}, NFT Address: {fight.fighter1}, Game Characteristics: {fight.fighter2}")
+    print(f"Fighter1 ID: {fight.fighter1_id}, Fighter2 ID: {fight.fighter2_id}, Odd1: {fight.odd1}, Odd2: {fight.odd2}")
 
 
 

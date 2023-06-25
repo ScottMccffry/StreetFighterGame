@@ -305,7 +305,6 @@ body {
   
   .invoice {
     grid-area: invoice;
-    background-color:#18181b;
     font-size: 0.875rem;
     width: 0;
     overflow: hidden;
@@ -314,7 +313,7 @@ body {
   
   }
   .invoice__wrapper {
-    width: 20rem;
+  
     padding: 1.2rem 1.5rem 2.5rem;
     transform: translate(0, 0);
   }
